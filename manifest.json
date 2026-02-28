@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Easy Language Learner",
+  "version": "1.3",
+  "description": "Aprende vocabulario desde subtítulos de YouTube (estilo Language Reactor)",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://translate.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+body.lr-ui {
+  background: #111;
+  color: #eee;
+  font-family: Inter, Arial, sans-serif;
+  width: 360px;
+}
+
+header {
+  padding: 10px;
+  font-weight: 700;
+  background: #1e1e1e;
+  text-align: center;
+}
+
+.card {
+  background: #1c1c1c;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Palabras: heredan todo del contenedor pero con tamaño fijo grande */
+.word {
+  all: inherit;                 /* Hereda color, fondo, etc. del contenedor */
+  background-color: #111 !important;
+  font-size: 22px !important;   /* Tamaño grande fijo */
+  line-height: 1.4 !important;  /* Altura de línea adecuada */
+  cursor: pointer;
+  display: inline;
+}
+
+.word.known {
+  text-decoration: underline;
+  text-decoration-color: #ffcc00;
+  text-underline-offset: 2px;
+}
+
+.word.unknown:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+/* TOOLTIP */
+.lr-tooltip {
+  position: fixed;
+  background: #111;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  z-index: 999999;
+  pointer-events: none;
+  max-width: 260px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+button {
+  margin-left: 6px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
