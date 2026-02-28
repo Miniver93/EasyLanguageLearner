@@ -24,12 +24,11 @@ header {
   border-radius: 6px;
 }
 
-/* Palabras: heredan todo del contenedor pero con tamaño fijo grande */
 .word {
-  all: inherit;                 /* Hereda color, fondo, etc. del contenedor */
+  all: inherit;
   background-color: #111 !important;
-  font-size: 22px !important;   /* Tamaño grande fijo */
-  line-height: 1.4 !important;  /* Altura de línea adecuada */
+  font-size: 22px !important;
+  line-height: 1.4 !important;
   cursor: pointer;
   display: inline;
 }
@@ -45,7 +44,6 @@ header {
   border-radius: 2px;
 }
 
-/* TOOLTIP */
 .lr-tooltip {
   position: fixed;
   background: #111;
@@ -74,4 +72,157 @@ button {
 
 button:hover {
   background: #555;
+}
+
+/* Botones personalizados en reproductor */
+.lr-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.lr-power-button, .lr-config-button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 5px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.lr-power-button:hover, .lr-config-button:hover {
+  opacity: 1;
+}
+
+.lr-config-button {
+  font-size: 16px;
+}
+
+/* MODAL DE CONFIGURACIÓN */
+.lr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
+}
+
+.lr-modal {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  width: 700px;
+  max-width: 90%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  color: #eee;
+}
+
+.lr-modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.lr-modal-close {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.lr-modal-close:hover {
+  color: #fff;
+}
+
+.lr-modal-body {
+  display: flex;
+  flex: 1;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.lr-modal-left {
+  width: 200px;
+  background-color: #2a2a2a;
+  padding: 15px 0;
+  border-right: 1px solid #444;
+}
+
+.lr-settings-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lr-settings-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #ccc;
+  transition: background 0.2s;
+}
+
+.lr-settings-menu li:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.lr-settings-menu li.active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.lr-modal-right {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #1e1e1e;
+}
+
+.lr-dictionary-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.lr-dictionary-list li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lr-dictionary-list li:last-child {
+  border-bottom: none;
+}
+
+.lr-delete-word {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.lr-delete-word:hover {
+  background: #bb2d3b;
 }
